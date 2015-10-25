@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="br.com.prog3.rh.Evento, br.com.prog3.rh.EventoDAO"%>
+<%@page import= "br.com.prog3.rh.Evento, br.com.prog3.rh.EventoDAO"%>
 <%@page import = "java.util.List" %>
 
 <!DOCTYPE html>
@@ -20,26 +20,26 @@
             //Pegando Parametro do formulario evento.jsp
             String dia = request.getParameter("dia");
             if (dia == null) {
-                dia = "0";
+                dia = "00";
             }
             if (dia.equals("")) {
-                dia = "0";
+                dia = "00";
             }
 
             String mes = request.getParameter("mes");
             if (mes == null) {
-                mes = "0";
+                mes = "00";
             }
             if (mes.equals("")) {
-                mes = "0";
+                mes = "00";
             }
             
             String ano = request.getParameter("ano");
             if (ano == null) {
-                ano = "0";
+                ano = "00";
             }
             if (ano.equals("")) {
-                ano = "0";
+                ano = "00";
             }
             
             
@@ -95,11 +95,15 @@
                 //Enviando o objeto para o banco
                 List<Evento> le = ed.listarTodos();
                 for (Evento eve : le) {
-                    out.print("<a href=../evento.jsp?" +"dia=" + eve.getDia() +"&mes=" + eve.getMes() +"&ano=" + eve.getAno() +"&descricao=" + eve.getDescricao() + ">");
-                    out.print(eve.getDia() + " ");
-                    out.print("</a>");
-                    out.print(eve.getMes() + " ");
-                    out.print(eve.getAno() + " ");
+                    out.print("<a href=../evento.jsp?" + 
+                            "dia=" + eve.getDia() +
+                            "&mes=" + eve.getMes() +
+                            "&ano=" + eve.getAno() + 
+                            "&descricao=" + eve.getDescricao() + ">");
+                    out.print(eve.getDia() + "/");
+                    out.print(eve.getMes() + "/");
+                    out.print(eve.getAno());
+                    out.print("</a>  -  ");
                     out.print(eve.getDescricao() + " ");
                     out.print("<br>");
                 }

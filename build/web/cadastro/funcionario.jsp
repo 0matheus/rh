@@ -16,21 +16,33 @@
     </head>
     <body>
         <%
-            String matricula = request.getParameter("matricula");
-            if(matricula == null || matricula.equals("")){
-                matricula = "0";
-            }
-            String nome = request.getParameter("nome");
-            if(nome == null || nome.equals("")){
-                nome = "";
-            }
-            String cargo = request.getParameter("cargo");
-            if(cargo == null || cargo.equals("")){
-                cargo = "Nenhum";
-            }
+            String matricula = "0";
+            String nome = "";
+            String cargo = "0";
             
             CargoDAO cd= new CargoDAO();
+            Cargo c = new Cargo();
             List<Cargo> lc = cd.listarTodos();
+            
+            if(request.getParameter("matricula") != null){
+                matricula = request.getParameter("matricula");
+            }
+            
+            if(request.getParameter("nome") != null){
+                nome = request.getParameter("nome");
+            }
+            
+            if(request.getParameter("cargo") != null){
+                cargo = request.getParameter("cargo");
+            }
+            
+            
+            String descricao = "";
+            if(!cargo.equals("") && !cargo.equals("0")){
+                c = cd.buscaPorCodigo(Integer.parseInt(cargo));
+                descricao = c.getDescricao();
+            }
+            
             
         %>
         
@@ -41,7 +53,7 @@
                 
             <div>Cargo: 
                 <select name="cargo">
-                    <option value="0"> Selecione </option>
+                    <option value="<%=cargo%>"> <%=descricao%> </option>
                     <%for (Cargo car: lc){ %>
                     <option value="<%=car.getCodigo()%>"> <%=car.getDescricao()%></option>
                     <% }%>
@@ -60,15 +72,7 @@
              </div>
         
         
-
-        
-        
-        
         </form>
-        
-        
-        
-        
         
         
         

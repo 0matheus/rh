@@ -17,39 +17,44 @@
     <body>
         <%
             //Pegando Parametro do formulario cargo.jsp
-            String matricula = request.getParameter("matricula");
-            if (matricula == null) {
-                matricula = "0";
+            
+            String matricula = "0";
+            String nome = "";
+            String cargo = "0";
+            String crud = "";
+            
+            if(request.getParameter("matricula") != null){
+                matricula = request.getParameter("matricula");
             }
-            if (matricula.equals("")) {
-                matricula = "0";
+            
+            if(request.getParameter("nome") != null){
+                nome = request.getParameter("nome");
+            }
+            
+            if(request.getParameter("cargo") != null){
+                cargo = request.getParameter("cargo");
+            }
+            
+            if(request.getParameter("crud") != null){
+                crud = request.getParameter("crud");
             }
 
-            String nome = request.getParameter("nome");
-            if (nome == null) {
-                nome = "";
-            }
-            if (nome.equals("")) {
-                nome = "";
-            }
-            
-            String cargo = request.getParameter("cargo");
-            if (cargo == null) {
-                cargo = "0";
-            }
-            
-            String crud = request.getParameter("crud");
-        
-             //Convertendo dados
+          
+             //Convertendo dados se nao forem vazios
             Integer iMatricula=0;
             Integer iCargo=0;
+            
+            if(!matricula.equals("")){
+                iMatricula = Integer.parseInt(matricula);
+            }
            
-           
-            iMatricula = Integer.parseInt(matricula);
-            iCargo = Integer.parseInt(cargo);
+            if(!matricula.equals("")){
+                iCargo = Integer.parseInt(cargo);
+            } 
             
             
-             //Criando objeto das classes Funcionario e FuncionarioDAO
+            
+            //Criando objeto das classes Funcionario e FuncionarioDAO
             Funcionario f = new Funcionario();
             FuncionarioDAO fd = new FuncionarioDAO();
         

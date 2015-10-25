@@ -119,7 +119,7 @@ public class FuncionarioDAO {
     //Metodo que retorna um objeto de acordo com a matricula
     public Funcionario buscaPorMatricula(int Mat) {
         String sql = "select * from funcionario";
-        sql += " where matricula = ?";
+        sql += " where matricula=?";
         Connection con = Conexao.abrirConexao();
 
         try {

@@ -16,17 +16,17 @@
         <%
             String dia = request.getParameter("dia");
             if(dia == null || dia.equals("")){
-                dia = "0";
+                dia = "00";
             }
             
             String mes = request.getParameter("mes");
             if(mes == null || dia.equals("")){
-                mes = "0";
+                mes = "00";
             }
             
             String ano = request.getParameter("ano");
             if(ano == null || dia.equals("")){
-                ano = "0";
+                ano = "0000";
             }
             
             String descricao = request.getParameter("descricao");

@@ -122,7 +122,7 @@ public class CargoDAO {
     //Metodo que retorna um objeto, de acordo com o código
     public Cargo buscaPorCodigo(int Cod) {
         String sql = "select * from cargo";
-        sql += "where codigo=?";
+        sql += " where codigo=?";
         Connection con = Conexao.abrirConexao();
 
         try {
