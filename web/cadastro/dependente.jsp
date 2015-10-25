@@ -18,6 +18,10 @@
     <body>
         
         <%
+            FuncionarioDAO fd= new FuncionarioDAO();
+            Funcionario f = new Funcionario();
+            List<Funcionario> lf = fd.listarTodos();
+            
             String nome = request.getParameter("nome");
             if(nome == null || nome.equals("")){
                nome = "";
@@ -37,9 +41,20 @@
              if (sexo == null || sexo.equals("")){
                 sexo = "";
             }
+            String qSexo= "";
+            if (sexo.equals("m") || sexo.equals("M")){
+                qSexo = "Masculino";
+            }
+            if(sexo.equals("f")|| sexo.equals("F")){
+                qSexo = "Feminino";
+            }
         
-            FuncionarioDAO fd= new FuncionarioDAO();
-            List<Funcionario> lf = fd.listarTodos();
+            String qFuncionario = "";
+            if(!matricula.equals("") && !matricula.equals("0")){
+                f = fd.buscaPorMatricula(Integer.parseInt(matricula));
+                qFuncionario = f.getNome();
+            }
+            
         %>
         
         
@@ -49,7 +64,7 @@
             <div> Nome: <input type="text" name="nome" value="<%=nome%>"/></div><p>
             <div> Funcionario: 
                 <select name="matricula">
-                    <option value="0"> Selecione </option>
+                    <option value="<%=f.getMatricula()%>"> <%=qFuncionario%> </option>
                     <%for (Funcionario func : lf){ %>
                     <option value="<%=func.getMatricula()%>"> <%=func.getNome()%></option>
                     <% }%>
@@ -58,7 +73,7 @@
             <div> Idade: <input type="text" name="idade" value="<%=idade%>"/></div><p>
             <div> Sexo: 
                 <select name="sexo">
-                    <option value="-"> Selecione </option>
+                    <option value="<%=sexo%>"> <%=qSexo%> </option>
                     <option value="M"> Masculino</option>
                     <option value="F"> Feminino</option>
                 </select> </div><p>

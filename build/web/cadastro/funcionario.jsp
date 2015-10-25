@@ -4,10 +4,10 @@
     Author     : aluno
 --%>
 
-<%@page import="br.com.prog3.rh.Cargo"%>
+<%@page import= "br.com.prog3.rh.Cargo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="br.com.prog3.rh.Funcionario, br.com.prog3.rh.CargoDAO, br.com.prog3.rh.FuncionarioDAO" %>
-<%@page import="java.util.List" %>
+<%@page import= "br.com.prog3.rh.Funcionario, br.com.prog3.rh.CargoDAO, br.com.prog3.rh.FuncionarioDAO" %>
+<%@page import= "java.util.List" %>
 <!DOCTYPE html>
 <html>
     <head>
