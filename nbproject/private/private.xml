@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/crud/cargoCrud.jsp</file>
+            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/src/java/br/com/prog3/rh/Cargo.java</file>
             <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/funcionario.jsp</file>
             <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/dependente.jsp</file>
-            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/evento.jsp</file>
-            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/index.html</file>
-            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/crud/dependenteCrud.jsp</file>
-            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/web/cadastro/cargo.jsp</file>
+            <file>file:/C:/Users/mathe/Documents/NetBeansProjects/rh/src/java/br/com/prog3/rh/CargoDAO.java</file>
         </group>
     </open-files>
 </project-private>
