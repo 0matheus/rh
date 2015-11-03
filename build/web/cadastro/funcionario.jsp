@@ -14,11 +14,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Funcionario</title>
     </head>
+    <script>
+        function limpar(){
+            with(document.form1){
+                matricula.value = '';
+                nome.value = '';
+                cargo.value = '';
+            }
+        }
+    </script>
     <body>
         <%
             String matricula = "0";
             String nome = "";
             String cargo = "0";
+            String crud = "";
             
             CargoDAO cd= new CargoDAO();
             Cargo c = new Cargo();
@@ -48,8 +58,8 @@
         
         <div><h2>Cadastro de Funcionarios</h2></div>
         <form action="crud/funcionarioCrud.jsp" method="get" name="form1" >
-            <div>Matricula: <input type="text" name="matricula" value="<%=matricula%>"></div><p>
-            <div>Nome: <input type="text" name="nome" value="<%=nome%>"></div><p>
+            <div>Matricula: <input type="text" name="matricula" value="<%=matricula%>"/></div><p>
+            <div>Nome: <input type="text" name="nome" value="<%=nome%>"/></div><p>
                 
             <div>Cargo: 
                 <select name="cargo">
@@ -68,7 +78,7 @@
                 <input type="submit" name="crud" value="Alterar"/>
                 <input type="submit" name="crud" value="Excluir"/>
                 <input type="submit" name="crud" value="Pesquisar"/>
-                <input type="reset" value="Limpar"/>            
+                <input type="button" value="Limpar" onclick="parent.location.href='funcionario.jsp'" />            
              </div>
         
         

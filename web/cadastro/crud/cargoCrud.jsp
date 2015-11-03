@@ -29,9 +29,7 @@
             if (descricao == null) {
                 descricao = "";
             }
-            if (descricao.equals("")) {
-                descricao = "";
-            }
+            
             String salario = request.getParameter("salario");
             if (salario == null) {
                 salario = "0.0";
@@ -42,8 +40,8 @@
             String crud = request.getParameter("crud");
 
             //Convertendo dados
-            Integer iCodigo=0;
-            Double dSalario=0.0;
+            Integer iCodigo = 0;
+            Double dSalario = 0.0;
             if (!crud.equals("Pesquisar")) {
                 iCodigo = Integer.parseInt(codigo);
                 dSalario = Double.parseDouble(salario);
@@ -77,8 +75,19 @@
             if (crud.equals("Pesquisar")) {
                 //Enviando o objeto para o banco
                 List<Cargo> lc = cd.listarTodos();
-                for (Cargo car : lc) {
-                    out.print("<a href=../cargo.jsp?" + "codigo=" + car.getCodigo() + "&descricao=" + car.getDescricao() + "&salario=" + car.getSalario() + ">");
+                for (Cargo car : lc) {%>
+                    <a href="../cargo.jsp?codigo=<%=car.getCodigo()%>&descricao=<%=car.getDescricao()%>&salario=<%=car.getSalario()%>">
+                    <%=car.getCodigo()%></a>
+                    <%=car.getDescricao()%>
+                    <%=car.getSalario()%><br>
+                    <% }
+                    }
+                %>
+
+
+
+
+                   <% /* out.print("<a href=../cargo.jsp?" + "codigo=" + car.getCodigo() + "&descricao=" + car.getDescricao() + "&salario=" + car.getSalario() + ">");
                     out.print(car.getCodigo() + " ");
                     out.print("</a>");
                     out.print(car.getDescricao() + " ");
@@ -87,6 +96,6 @@
                 }
 
             }
-        %>
+         */%>
     </body>
 </html>
