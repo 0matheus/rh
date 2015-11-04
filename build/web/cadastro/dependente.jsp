@@ -83,7 +83,7 @@
                 <input type="submit" name="crud" value="Alterar"/>
                 <input type="submit" name="crud" value="Excluir"/>
                 <input type="submit" name="crud" value="Pesquisar"/>
-                <input type="reset"  value="Limpar"/>       
+                <input type="button" value="Limpar" onclick="parent.location.href='dependente.jsp'" />            
             </div>
             </form>
             
