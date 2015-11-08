@@ -9,11 +9,30 @@ Author     : aluno
 <%@page import="br.com.prog3.rh.Funcionario, br.com.prog3.rh.FuncionarioDAO"%>
 
 <!DOCTYPE html>
-<html>
+<html>  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Crud para Funcionario</title>
 </head>
+<script>
+        function funcVoltar()
+        {
+            window.location.href="../funcionario.jsp"
+        }
+
+        function funcConfirmarExclusao()
+        {
+            if(confirm("Deseja realmente excluir ?")){
+                alert('Confirmado');
+                <%
+                    
+                %>
+            }else{
+                alert('Nao Confirmado');
+            }
+        }
+    </script>
+
 <body>
     <%
         //Pegando Parametro do formulario cargo.jsp
@@ -68,16 +87,29 @@ Author     : aluno
         if (crud.equals("Inserir")) {
             //Enviando o objeto para o banco
             out.print(fd.inserir(f));
+            %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+            <% 
         }
 
         if (crud.equals("Alterar")) {
             //Enviando o objeto para o banco
             out.print(fd.alterar(f));
+            %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+            <% 
         }
 
         if (crud.equals("Excluir")) {
             //Enviando o objeto para o banco
+            %>
+
+            <%
             out.print(fd.excluir(f));
+            %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+
+            <% 
         }
 
         if (crud.equals("Pesquisar")) {
@@ -93,25 +125,6 @@ Author     : aluno
 
         }
         %>  
-
-
-
-       <%   /*  
-                out.print("<a href=../funcionario.jsp?"
-                        + "matricula=" + func.getMatricula()
-                        + "&nome=" + func.getNome()
-                        + "&cargo=" + func.getCargo() + ">");
-                out.print(func.getMatricula() + " ");
-                out.print("</a>");
-                out.print(func.getNome() + " ");
-                out.print(func.getCargo() + " ");
-                out.print("<br>");
-            }
-
-        }
-        */%>
-    
-    
     
     
 </body>

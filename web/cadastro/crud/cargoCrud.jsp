@@ -13,7 +13,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRUD para cargo</title>
+
     </head>
+    <script>
+        function funcVoltar()
+        {
+            window.location.href="../cargo.jsp"
+        }
+    </script>
     <body>
         <%
             //Pegando Parametro do formulario cargo.jsp
@@ -60,16 +67,25 @@
             if (crud.equals("Inserir")) {
                 //Enviando o objeto para o banco
                 out.print(cd.inserir(c));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%
             }
 
             if (crud.equals("Alterar")) {
                 //Enviando o objeto para o banco
                 out.print(cd.alterar(c));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%
             }
 
             if (crud.equals("Excluir")) {
                 //Enviando o objeto para o banco
                 out.print(cd.excluir(c));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%
             }
 
             if (crud.equals("Pesquisar")) {

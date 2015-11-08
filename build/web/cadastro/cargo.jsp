@@ -27,6 +27,16 @@
                 salario.value = '';
             }
         }
+
+        function excluir()
+        {
+            if(confirm("Deseja realmente excluir ?")){
+                alert('Excluido');
+            }else{
+                alert('Operaçao cancelada');
+                window.location.href="../cargo.jsp"
+            }
+        }
         
     </script>
     <body>
@@ -54,7 +64,7 @@
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
                 <input type="submit" name="crud" value="Alterar"/>
-                <input type="submit" name="crud" value="Excluir"/>
+                <input type="submit" name="crud" value="Excluir" onclick="excluir()" />
                 <input type="submit" name="crud" value="Pesquisar"/>
                 <input type="button" value="Limpar" onclick="parent.location.href='cargo.jsp'" />            
              </div>

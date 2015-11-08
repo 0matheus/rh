@@ -22,6 +22,21 @@
                 cargo.value = '';
             }
         }
+
+        function excluir()
+        {
+            if(confirm("Deseja realmente excluir ?")){
+                alert('Excluido');
+            }else{
+                alert('Operaçao cancelada');
+                window.location.href="../funcionario.jsp"
+            }
+        }
+
+        function novoCargo()
+        {
+            window.location.href="../cargo.jsp"
+        }
     </script>
     <body>
         <%
@@ -67,7 +82,8 @@
                     <%for (Cargo car: lc){ %>
                     <option value="<%=car.getCodigo()%>"> <%=car.getDescricao()%></option>
                     <% }%>
-                </select>
+                </select>  
+                <input type="submit" value="Novo" onclick="parent.location.href='../cargo.jsp">
             </div>
                 
                 
@@ -76,7 +92,9 @@
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
                 <input type="submit" name="crud" value="Alterar"/>
-                <input type="submit" name="crud" value="Excluir"/>
+
+                <input type="submit" name="crud" value="Excluir" onclick="excluir()" />
+
                 <input type="submit" name="crud" value="Pesquisar"/>
                 <input type="button" value="Limpar" onclick="parent.location.href='funcionario.jsp'" />            
              </div>

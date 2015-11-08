@@ -11,6 +11,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Enventos</title>
     </head>
+    <script>
+        function excluir()
+        {
+            if(confirm("Deseja realmente excluir ?")){
+                alert('Excluido');
+            }else{
+                alert('Operaçao cancelada');
+                with()
+                window.location.href="../evento.jsp"
+            }
+        }
+    </script>
+
     <body>
         
         <%
@@ -47,7 +60,7 @@
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
                 <input type="submit" name="crud" value="Alterar"/>
-                <input type="submit" name="crud" value="Excluir"/>
+                <input type="submit" name="crud" value="Excluir" onclick="excluir()" />
                 <input type="submit" name="crud" value="Pesquisar"/>
                 <input type="reset" value="Limpar"/>            
              </div>

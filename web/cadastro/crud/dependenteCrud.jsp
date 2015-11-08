@@ -15,6 +15,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRUD para Dependente</title>
     </head>
+
+    <script>
+        function funcVoltar()
+        {
+            window.location.href="../dependente.jsp"
+        }
+    </script>
     
     <body>
         <%
@@ -78,17 +85,26 @@
             
             if (crud.equals("Inserir")){
                 //Enviando objeto para o banco
-                out.print(dd.inserir(d));                
+                out.print(dd.inserir(d));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%                
             }
             
             if(crud.equals("Alterar")){
                 //Enviando objeto para o banco
                 out.print(dd.alterar(d));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%
             }
             
             if(crud.equals("Excluir")){
                 //Enviando objeto para o banco
                 out.print(dd.excluir(d));
+                %>
+                <div><input type="button" value="Voltar" onclick="funcVoltar()"></div>
+                <%
             }
             
             if(crud.equals("Pesquisar")){

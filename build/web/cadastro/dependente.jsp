@@ -14,7 +14,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de dependentes</title>
     </head>
-    
+    <script>
+        function excluir()
+        {
+            if(confirm("Deseja realmente excluir ?")){
+                alert('Excluido');
+            }else{
+                alert('Operaçao cancelada');
+                window.location.href="../dependente.jsp"
+            }
+        }
+    </script>
     <body>
         
         <%
@@ -69,14 +79,17 @@
                     <option value="<%=func.getMatricula()%>"> <%=func.getNome()%></option>
                     <% }%>
                 </select>
+                <input type="submit" value="Adicionar" onclick="parent.location.href='../funcionario.jsp'">
             </div><p>
+            
             <div> Idade: <input type="text" name="idade" value="<%=idade%>"/></div><p>
             <div> Sexo: 
                 <select name="sexo">
                     <option value="<%=sexo%>"> <%=qSexo%> </option>
                     <option value="M"> Masculino</option>
                     <option value="F"> Feminino</option>
-                </select> </div><p>
+                </select> 
+            </div><p>
             
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
