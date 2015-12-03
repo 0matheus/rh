@@ -28,6 +28,7 @@
         {
             if(!confirm("Deseja realmente excluir ?"))
             {
+<<<<<<< HEAD
                 alert("Operação cancelada");
                 window.location.href="funcionario.jsp"
                 return false;
@@ -38,11 +39,25 @@
                 return true;
             }
                         
+=======
+                window.location.href="funcionario.jsp";
+                return false;
+            }
+             
+            alert("Excluido!");
+            return true;
+
+            
+>>>>>>> origin/master
         }
 
         function novoCargo()
         {
+<<<<<<< HEAD
             window.location.href="cargo.jsp"
+=======
+            window.location.href="../cadastro/cargo.jsp"
+>>>>>>> origin/master
         }
     </script>
     
@@ -91,7 +106,11 @@
                     <option value="<%=car.getCodigo()%>"> <%=car.getDescricao()%></option>
                     <% }%>
                 </select>  
+<<<<<<< HEAD
                 <input type="button" value="Novo" onclick="novoCargo();"/>
+=======
+                <input type="button" value="Novo" onclick="novoCargo()"/>
+>>>>>>> origin/master
             </div>
                 
                 
@@ -100,7 +119,13 @@
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
                 <input type="submit" name="crud" value="Alterar"/>
+<<<<<<< HEAD
                 <input type="submit" name="crud" value="Excluir" onclick="return excluir();" />
+=======
+
+                <input type="button" name="crud" value="Excluir" onclick="return excluir();" />
+
+>>>>>>> origin/master
                 <input type="submit" name="crud" value="Pesquisar"/>
                 <input type="button" value="Limpar" onclick="parent.location.href='funcionario.jsp'"/>            
              </div>
