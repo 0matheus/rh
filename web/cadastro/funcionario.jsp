@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Funcionario</title>
     </head>
+    
     <script>
         function limpar(){
             with(document.form1){
@@ -25,19 +26,26 @@
 
         function excluir()
         {
-            if(confirm("Deseja realmente excluir ?")){
-                alert('Excluido');
-            }else{
-                alert('Operaçao cancelada');
-                window.location.href="../funcionario.jsp"
+            if(!confirm("Deseja realmente excluir ?"))
+            {
+                alert("Operação cancelada");
+                window.location.href="funcionario.jsp"
+                return false;
             }
+            else
+            {
+                alert("Excluido!");
+                return true;
+            }
+                        
         }
 
         function novoCargo()
         {
-            window.location.href="../cargo.jsp"
+            window.location.href="cargo.jsp"
         }
     </script>
+    
     <body>
         <%
             String matricula = "0";
@@ -83,7 +91,7 @@
                     <option value="<%=car.getCodigo()%>"> <%=car.getDescricao()%></option>
                     <% }%>
                 </select>  
-                <input type="submit" value="Novo" onclick="parent.location.href='../cargo.jsp">
+                <input type="button" value="Novo" onclick="novoCargo();"/>
             </div>
                 
                 
@@ -92,11 +100,9 @@
             <div>
                 <input type="submit" name="crud" value="Inserir"/>
                 <input type="submit" name="crud" value="Alterar"/>
-
-                <input type="submit" name="crud" value="Excluir" onclick="excluir()" />
-
+                <input type="submit" name="crud" value="Excluir" onclick="return excluir();" />
                 <input type="submit" name="crud" value="Pesquisar"/>
-                <input type="button" value="Limpar" onclick="parent.location.href='funcionario.jsp'" />            
+                <input type="button" value="Limpar" onclick="parent.location.href='funcionario.jsp'"/>            
              </div>
         
         

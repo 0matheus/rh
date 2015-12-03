@@ -20,17 +20,6 @@ Author     : aluno
             window.location.href="../funcionario.jsp"
         }
 
-        function funcConfirmarExclusao()
-        {
-            if(confirm("Deseja realmente excluir ?")){
-                alert('Confirmado');
-                <%
-                    
-                %>
-            }else{
-                alert('Nao Confirmado');
-            }
-        }
     </script>
 
 <body>
